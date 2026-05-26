@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -80,7 +79,7 @@
                     </h1>
                 </div>
                 <p class="text-lg md:text-xl font-light text-cream-900 leading-relaxed max-w-xl">
-                    「專注於高精度帳務對帳，主動建立退件防錯機制；積極擁擁抱數位轉型，用 AI 技術重塑日常行政效率。」
+                    「專注於高精度帳務對帳，主動建立退件防錯機制；積極擁抱數位轉型，用 AI 技術重塑日常行政效率。」
                 </p>
                 
                 <!-- 行動按鈕 -->
@@ -101,10 +100,16 @@
                     <!-- 背景幾何裝飾 -->
                     <div class="absolute inset-0 bg-cream-100 rounded-2xl transform rotate-3 border border-cream-200/70"></div>
                     <!-- 大頭照外框 -->
-                    <div class="absolute inset-0 bg-white p-2.5 rounded-2xl border border-cream-200/80 premium-shadow flex items-center justify-center overflow-hidden">
-                        <!-- 明確指向相對路徑 ./avatar001.png -->
-                        <img id="avatarImage" src="./avatar001.png" alt="張雅華" class="w-full h-full object-contain rounded-xl p-2 bg-white"
-                             onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500';">
+                    <div class="absolute inset-0 bg-white p-3 rounded-2xl border border-cream-200/80 premium-shadow flex items-center justify-center overflow-hidden">
+                        <!-- 只讀取您上傳的 avatar001.png -->
+                        <img id="avatarImage" src="./avatar001.png" alt="張雅華" class="w-full h-full object-contain rounded-xl transition-opacity duration-300"
+                             onerror="showFallbackImage();">
+                             
+                        <!-- fallback 精美文字頭像（僅在圖片加載失敗時顯示，預設隱藏） -->
+                        <div id="avatarFallback" class="absolute inset-0 flex flex-col items-center justify-center bg-cream-100 rounded-xl hidden">
+                            <span class="text-3xl font-bold text-accent-primary tracking-wider">雅華</span>
+                            <span class="text-xs text-accent-secondary mt-1 font-mono">Y. H. Chang</span>
+                        </div>
                     </div>
 
                     <!-- 浮動標籤 1 (工作資歷) -->
@@ -434,6 +439,16 @@
             
             // 重設表單
             document.getElementById("contactForm").reset();
+        }
+
+        // 失敗時的備用顯示（優雅文字替代卡）
+        function showFallbackImage() {
+            const img = document.getElementById("avatarImage");
+            const fallback = document.getElementById("avatarFallback");
+            if (img && fallback) {
+                img.style.display = "none";
+                fallback.classList.remove("hidden");
+            }
         }
 
         // 自訂精美 Toast 提示
