@@ -38,7 +38,7 @@
         html {
             scroll-behavior: smooth;
         }
-        /* 漸變與微影調整 */
+        /* 變更與微影調整 */
         .premium-shadow {
             box-shadow: 0 4px 20px -2px rgba(67, 61, 53, 0.04), 0 2px 8px -1px rgba(67, 61, 53, 0.02);
         }
@@ -101,14 +101,9 @@
                     <div class="absolute inset-0 bg-cream-100 rounded-2xl transform rotate-3 border border-cream-200/70"></div>
                     <!-- 大頭照外框 -->
                     <div class="absolute inset-0 bg-white p-2.5 rounded-2xl border border-cream-200/80 premium-shadow flex items-center justify-center overflow-hidden">
-                        <!-- 大頭照優先讀取本地 avatar.png，若無則讀取預設圖 -->
-                        <img id="avatarImage" src="avatar.png" alt="張雅華" class="w-full h-full object-cover rounded-xl hidden"
-                             onload="document.getElementById('avatarFallback').style.display='none'; this.classList.remove('hidden')"
-                             onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500'; this.onerror=null;">
-                        <!-- 預設 SVG -->
-                        <div id="avatarFallback" class="absolute inset-0 flex items-center justify-center bg-cream-100 rounded-xl">
-                            <i data-lucide="user" class="w-16 h-16 text-accent-secondary"></i>
-                        </div>
+                        <!-- 大頭照指定讀取您上傳的 avatar001.png -->
+                        <img id="avatarImage" src="avatar001.png" alt="張雅華" class="w-full h-full object-cover rounded-xl"
+                             onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500';">
                     </div>
 
                     <!-- 浮動標籤 1 (工作資歷) -->
@@ -173,7 +168,7 @@
                         </div>
                         <div>
                             <p class="text-cream-800 opacity-70">最高學歷</p>
-                            <p class="font-semibold text-cream-900">大同技術學院 畢業</p>
+                            <p class="font-semibold text-cream-900">大同技術學院-時尚造型設計系</p>
                         </div>
                         <div>
                             <p class="text-cream-800 opacity-70">持有證照</p>
@@ -256,14 +251,14 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
                         <div class="md:col-span-3">
-                            <span class="inline-block px-2 py-0.5 bg-accent-primary/10 text-accent-primary text-[10px] font-bold tracking-wider rounded-md mb-1 uppercase">2026 培訓中</span>
+                            <span class="inline-block px-2 py-0.5 bg-accent-primary/10 text-accent-primary text-[10px] font-bold tracking-wider rounded-md mb-1 uppercase">2026/03 - 2026/06</span>
                             <h4 class="text-sm font-bold text-cream-900">健行科技大學</h4>
-                            <p class="text-xs text-cream-800">400小時數位AI應用培訓班</p>
+                            <p class="text-xs text-cream-800">400小時數位辦公與AI應用培訓班</p>
                         </div>
                         <div class="md:col-span-9 bg-white p-5 rounded-xl border border-cream-200/70 premium-shadow">
                             <p class="text-xs font-semibold text-accent-primary mb-1">數位行政工具與提示詞工程實踐</p>
                             <p class="text-xs text-cream-800 leading-relaxed">
-                                目前於培訓班精進數位行政整合。深入練習如何使用大語言模型輔助撰寫與排版專業商務信件、簡報大綱架構整理、Excel 數據表格快速篩選及函數處理。落實「人機協作」思維，厚植新世代行政專才所需的敏捷度。
+                                於健行科大受訓，精進新一代數位辦公流程。深入練習如何使用 ChatGPT 與 Gemini 輔助撰寫與排版專業商務信件、快速篩選並處理 Excel 數據表格及彙整大型文書會議報告，使行政流程更具彈性與效率。
                             </p>
                         </div>
                     </div>
@@ -283,8 +278,8 @@
                             <p class="text-xs font-semibold text-accent-primary mb-1">子公司財務請款核對與流程優化 (維持 99% 以上對帳正確率)</p>
                             <ul class="text-xs text-cream-800 space-y-1.5 list-disc pl-4 leading-relaxed">
                                 <li>熟練操作 <strong>Oracle 與泛宇系統</strong> 執行跨部門請款，每月精準對帳與發票沖銷處理 30-35 筆百萬級別交易。</li>
-                                <li>撰寫個人對帳 SOP 筆記流程，將常態對帳審核作業時間由 96 小時（3天）<strong>縮短至 48 小時（1.5天）</strong>。</li>
-                                <li>建立嚴謹單據覆核退件機制，每月主動攔截 4-5 次前線不實維修單據與錯誤，防止財務疏漏並倒逼源頭資料正確率提升至 95%。</li>
+                                <li>撰寫個人對帳 SOP 筆記流程，將常態對帳審核作業時間由 96 小時（3天）原定時程<strong>縮短至 48 小時（1.5天）</strong>。</li>
+                                <li>建立嚴謹單據覆核退件機制，每月主動攔截 4-5 次前線單據金額錯誤，防止財務疏漏並推動前端資料正確率提升至 95% 以上。</li>
                             </ul>
                         </div>
                     </div>
@@ -303,9 +298,9 @@
                         <div class="md:col-span-9 bg-white p-5 rounded-xl border border-cream-200/70 premium-shadow">
                             <p class="text-xs font-semibold text-accent-primary mb-1">不織布精密品檢作業與品質瑕疵判讀</p>
                             <ul class="text-xs text-cream-800 space-y-1.5 list-disc pl-4 leading-relaxed">
-                                <li>監控精密自動品檢儀器，執行高穩定度針軋布與彈性不織布檢驗，單日最高核實 25-27 捲。</li>
-                                <li>即時處理厚薄度及汙損異常停機警報，獨立做出瑕疵裁剪及接頭處理，維持高品質標準並減少原料損耗。</li>
-                                <li>配合出貨包裝端執行標籤覆核，確保規格一致性，並於初期自發整理工作記錄協助現場生產日報表基礎錄入。</li>
+                                <li>負責彈性不織布與針軋布之精密品檢作業，單日最高紀錄檢驗達 25-27 捲。</li>
+                                <li>即時處理設備厚薄度及汙損異常停機警報，獨立做出瑕疵裁剪及接頭處理，維持品質標準同時控制原料損耗。</li>
+                                <li>配合出貨包裝端執行標籤覆核，確保規格一致性，並於任職初期 3 個月協助現場日報表基礎錄入。</li>
                             </ul>
                         </div>
                     </div>
