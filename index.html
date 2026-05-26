@@ -102,10 +102,10 @@
                     <!-- 大頭照外框 -->
                     <div class="absolute inset-0 bg-white p-3 rounded-2xl border border-cream-200/80 premium-shadow flex items-center justify-center overflow-hidden">
                         
-                        <!-- 智慧載入大頭照：預設隱藏，成功時淡入，防破圖 -->
-                        <img id="avatarImage" alt="張雅華" class="w-full h-full object-contain rounded-xl p-2 bg-white hidden transition-opacity duration-300 opacity-0">
+                        <!-- 預設直接加載新資料夾路徑中的 avatar001.png -->
+                        <img id="avatarImage" src="./imges/avatar001.png" alt="張雅華" class="w-full h-full object-contain rounded-xl p-2 bg-white hidden transition-opacity duration-300 opacity-0">
                              
-                        <!-- fallback 精美文字頭像（預設顯示，直到相片確認載入成功） -->
+                        <!-- fallback 精美文字頭像（在圖片完全加載完成前，預設顯示） -->
                         <div id="avatarFallback" class="absolute inset-0 flex flex-col items-center justify-center bg-cream-100 rounded-xl">
                             <span class="text-3xl font-bold text-accent-primary tracking-wider">雅華</span>
                             <span class="text-xs text-accent-secondary mt-1 font-mono">Y. H. Chang</span>
@@ -236,7 +236,7 @@
     </section>
 
     <!-- 工作成果與經歷時間軸 (Timeline Work Experience) -->
-    <section id="experience" class="py-24 px-6 bg-cream-100 border-t border-cream-200/40">
+    <section id="experience" class="py-24 px-6 max-w-5xl mx-auto space-y-12">
         <div class="max-w-4xl mx-auto space-y-16">
             
             <div class="text-center md:text-left space-y-2">
@@ -456,13 +456,15 @@
             const img = document.getElementById('avatarImage');
             const fallback = document.getElementById('avatarFallback');
             
-            // 探測可能的檔名 (防範大小寫拼字錯誤與同步延遲)
+            // 探測可能的檔名 (優先順序已將新資料夾 imges/avatar001.png 提到最前方)
             const sources = [
+                'imges/avatar001.png',
+                'imges/avatar001.PNG',
+                './imges/avatar001.png',
+                './imges/avatar001.PNG',
                 'avatar001.png',
                 'avatar001.PNG',
-                'Avatar001.png',
-                'avatar.png',
-                'avatar.PNG'
+                './avatar001.png'
             ];
             
             let index = 0;
@@ -476,12 +478,16 @@
                         // 載入成功，套用正確的路徑
                         img.src = './' + sources[index];
                         img.classList.remove('hidden');
-                        img.classList.add('opacity-100');
+                        // 加入稍微延遲確保平滑過渡
+                        setTimeout(() => {
+                            img.classList.remove('opacity-0');
+                            img.classList.add('opacity-100');
+                        }, 50);
                         fallback.classList.add('hidden');
                     };
                     
                     tempImg.onerror = () => {
-                        // 載入失敗，嘗試下一個
+                        // 載入失敗，嘗試下一個可能路徑
                         index++;
                         tryLoadSource();
                     };
