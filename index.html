@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>張雅華 Ya Hua Chang | 個人履歷專頁</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FAF8F4',  /* 極致柔和暖米白 */
+                            100: '#F4EFE6', /* 卡其沙灘色 */
+                            200: '#EAE1D2', /* 邊框與分隔線 */
+                            300: '#DCD0BB',
+                            800: '#433D35', /* 溫和炭褐字體 */
+                            900: '#2A2621', /* 深褐色強調 */
+                        },
+                        accent: {
+                            primary: '#9C8570',   /* 內斂大地棕 */
+                            secondary: '#B5A08C', /* 奶茶灰褐 */
+                            light: '#F8F5F0',     /* 輕質背景 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'PingFang TC', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* 漸變與微影調整 */
+        .premium-shadow {
+            box-shadow: 0 4px 20px -2px rgba(67, 61, 53, 0.04), 0 2px 8px -1px rgba(67, 61, 53, 0.02);
+        }
+        .premium-shadow-hover:hover {
+            box-shadow: 0 12px 30px -4px rgba(67, 61, 53, 0.08), 0 4px 12px -2px rgba(67, 61, 53, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-cream-50 text-cream-800 font-sans leading-relaxed selection:bg-accent-secondary/30 selection:text-cream-900">
+
+    <!-- 頂部浮動導覽列 -->
+    <nav class="fixed top-0 left-0 w-full bg-cream-50/80 backdrop-blur-md z-50 border-b border-cream-200/40">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-sm font-bold tracking-[0.2em] text-cream-900">YA-HUA CHANG</a>
+            <div class="flex items-center gap-6 md:gap-8 text-xs font-medium tracking-wider">
+                <a href="#about" class="hover:text-accent-primary transition-colors py-1">關於我</a>
+                <a href="#skills" class="hover:text-accent-primary transition-colors py-1">技能</a>
+                <a href="#experience" class="hover:text-accent-primary transition-colors py-1">工作成果</a>
+                <a href="#contact" class="px-3 py-1.5 bg-cream-900 text-cream-50 rounded-lg hover:bg-accent-primary transition-colors">聯絡</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄形象區 (Hero Section) -->
+    <main class="pt-32 pb-24 px-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- 左側文字與核心定位 -->
+            <div class="lg:col-span-7 space-y-6 text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-cream-100 border border-cream-200/50 text-[11px] rounded-full text-accent-primary font-medium tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent-primary animate-ping"></span>
+                    行政效率化 & AI 實務轉型
+                </div>
+                <div class="space-y-2">
+                    <p class="text-xs tracking-[0.2em] text-accent-primary font-mono font-semibold">PERSONAL PROFILE</p>
+                    <h1 class="text-4xl md:text-5xl font-black text-cream-900 tracking-tight">
+                        張雅華 <span class="text-xl font-light text-accent-secondary ml-2 tracking-wide font-mono">Ya Hua Chang</span>
+                    </h1>
+                </div>
+                <p class="text-lg md:text-xl font-light text-cream-900 leading-relaxed max-w-xl">
+                    「專注於高精度帳務對帳，主動建立退件防錯機制；積極擁抱數位轉型，用 AI 技術重塑日常行政效率。」
+                </p>
+                
+                <!-- 行動按鈕 -->
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="#contact" class="group px-6 py-3 bg-accent-primary text-white text-xs font-semibold tracking-wider rounded-xl hover:bg-cream-900 transition-all shadow-sm flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> 聯絡諮詢 
+                        <i data-lucide="chevron-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#about" class="px-6 py-3 bg-white border border-cream-200 text-xs font-semibold tracking-wider text-cream-800 rounded-xl hover:bg-cream-100 hover:border-cream-300 transition-all">
+                        關於我的細節
+                    </a>
+                </div>
+            </div>
+
+            <!-- 右側大頭照與懸浮數據標籤 -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+                <div class="relative w-64 h-64 md:w-72 md:h-72">
+                    <!-- 背景幾何裝飾 -->
+                    <div class="absolute inset-0 bg-cream-100 rounded-2xl transform rotate-3 border border-cream-200/70"></div>
+                    <!-- 大頭照外框 -->
+                    <div class="absolute inset-0 bg-white p-2.5 rounded-2xl border border-cream-200/80 premium-shadow flex items-center justify-center overflow-hidden">
+                        <!-- 大頭照優先讀取本地 avatar.png，若無則讀取預設圖 -->
+                        <img id="avatarImage" src="avatar.png" alt="張雅華" class="w-full h-full object-cover rounded-xl hidden"
+                             onload="document.getElementById('avatarFallback').style.display='none'; this.classList.remove('hidden')"
+                             onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500'; this.onerror=null;">
+                        <!-- 預設 SVG -->
+                        <div id="avatarFallback" class="absolute inset-0 flex items-center justify-center bg-cream-100 rounded-xl">
+                            <i data-lucide="user" class="w-16 h-16 text-accent-secondary"></i>
+                        </div>
+                    </div>
+
+                    <!-- 浮動標籤 1 (工作資歷) -->
+                    <div class="absolute -top-4 -left-6 bg-white py-2 px-3.5 rounded-xl border border-cream-200 premium-shadow flex items-center gap-2 animate-bounce" style="animation-duration: 4s;">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                        <div class="text-left">
+                            <p class="text-[9px] text-cream-800 font-semibold tracking-wide">實務經驗</p>
+                            <p class="text-xs font-bold text-cream-900">近 6 年職涯</p>
+                        </div>
+                    </div>
+
+                    <!-- 浮動標籤 2 (AI 受訓) -->
+                    <div class="absolute -bottom-4 -right-4 bg-white py-2 px-4 rounded-xl border border-cream-200 premium-shadow flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+                        <div class="text-left">
+                            <p class="text-[9px] text-cream-800 font-semibold tracking-wide">最新受訓</p>
+                            <p class="text-xs font-bold text-cream-900">400h AI辦公班</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 關於我 (About Me) -->
+    <section id="about" class="py-20 px-6 bg-cream-100 border-y border-cream-200/40">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- 左側：標題與個人信念 -->
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-px bg-accent-primary"></div>
+                        <h2 class="text-xs tracking-[0.2em] font-bold text-accent-primary uppercase">About Me</h2>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cream-900 leading-tight">
+                        精準、高效、持續進化的行政職人
+                    </h3>
+                    <p class="text-xs text-cream-800/80 leading-relaxed font-mono">
+                        雖然我非行政本科系畢業，但我憑藉高度的環境適應力與自我整理筆記的自律，在請款核對與精密品檢中皆建立高效標準流程。
+                    </p>
+                </div>
+
+                <!-- 中間：自傳詳述 -->
+                <div class="lg:col-span-5 space-y-4 text-sm text-cream-800 leading-relaxed text-justify">
+                    <p>
+                        在<strong>山隆通運</strong>服務期間，主要負責子公司跨部門發票開立與沖帳。經手每月總額逾百萬、多達 35 筆的高額財務數據，我維持了 <strong>99% 以上的精準度</strong>，更主動建立異常退件機制與個人工作筆記，將原本耗時 3 天的對帳作業時間<strong>大幅減少至 1 天（折半至 48h）</strong>。
+                    </p>
+                    <p>
+                        而在<strong>勝宏實業</strong>的五年經歷，面對單日最高處理 27 捲針軋布的不織布現場高強度環境下，我能即時判讀厚薄、汙損異常並做出裁修與損耗控制決策。我深知「數據準確性」是企業運作的根基，透過主動整理流程筆記，使新進工作迅速步入軌道。
+                    </p>
+                </div>
+
+                <!-- 右側：個人檔案卡 -->
+                <div class="lg:col-span-3 bg-white p-5 rounded-2xl border border-cream-200/60 premium-shadow space-y-4 text-xs">
+                    <p class="font-bold text-cream-900 border-b border-cream-100 pb-2 text-[11px] tracking-widest uppercase">檔案簡歷</p>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-cream-800 opacity-70">現居地區</p>
+                            <p class="font-semibold text-cream-900">桃園市大園區</p>
+                        </div>
+                        <div>
+                            <p class="text-cream-800 opacity-70">最高學歷</p>
+                            <p class="font-semibold text-cream-900">大同技術學院 畢業</p>
+                        </div>
+                        <div>
+                            <p class="text-cream-800 opacity-70">持有證照</p>
+                            <span class="inline-flex items-center gap-1 mt-1 px-2 py-0.5 bg-cream-50 text-accent-primary font-bold rounded-md border border-cream-200">
+                                <i data-lucide="award" class="w-3 h-3"></i> 中打合格 (36字/分)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3項核心技能 (Skills Dashboard) -->
+    <section id="skills" class="py-24 px-6 max-w-5xl mx-auto space-y-12">
+        <div class="text-center md:text-left space-y-2">
+            <div class="flex items-center justify-center md:justify-start gap-3">
+                <div class="w-6 h-px bg-accent-primary"></div>
+                <h2 class="text-xs tracking-[0.2em] font-bold text-accent-primary uppercase">Expertise</h2>
+            </div>
+            <h3 class="text-2xl font-bold text-cream-900">核心能力儀表板</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- 技能 1 -->
+            <div class="bg-white p-8 rounded-2xl border border-cream-200/55 premium-shadow hover:translate-y-[-4px] transition-all duration-300 space-y-4">
+                <div class="w-10 h-10 rounded-xl bg-cream-100 flex items-center justify-center text-accent-primary">
+                    <i data-lucide="database" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-base font-bold text-cream-900">Oracle & 泛宇 ERP 帳務操作</h4>
+                <p class="text-xs text-cream-800 leading-relaxed">
+                    精準操作大型 ERP 財務核對與發票沖帳，具備處理每月百萬級子公司多筆請款的實務經驗，帳務精準度達到 99% 以上。
+                </p>
+            </div>
+
+            <!-- 技能 2 -->
+            <div class="bg-white p-8 rounded-2xl border border-cream-200/55 premium-shadow hover:translate-y-[-4px] transition-all duration-300 space-y-4">
+                <div class="w-10 h-10 rounded-xl bg-cream-100 flex items-center justify-center text-accent-primary">
+                    <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-base font-bold text-cream-900">精密品檢與損耗管理</h4>
+                <p class="text-xs text-cream-800 leading-relaxed">
+                    在高度專注的製造業現場，負責精密不織布品質檢測與厚薄汙損異常即時判讀，熟練執行疵段裁修以極大化原料利用率。
+                </p>
+            </div>
+
+            <!-- 技能 3 -->
+            <div class="bg-white p-8 rounded-2xl border border-cream-200/55 premium-shadow hover:translate-y-[-4px] transition-all duration-300 space-y-4">
+                <div class="w-10 h-10 rounded-xl bg-cream-100 flex items-center justify-center text-accent-primary">
+                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <h4 class="text-base font-bold text-cream-900">數位辦公與 AI 工具應用</h4>
+                <p class="text-xs text-cream-800 leading-relaxed">
+                    接受 400 小時實務職訓，能靈活操作 ChatGPT 與 Gemini 提示詞（Prompt）輔助公務信件撰寫、Excel 複雜公式查找與會議長文摘要。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作成果與經歷時間軸 (Timeline Work Experience) -->
+    <section id="experience" class="py-24 px-6 bg-cream-100 border-t border-cream-200/40">
+        <div class="max-w-4xl mx-auto space-y-16">
+            
+            <div class="text-center md:text-left space-y-2">
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <div class="w-6 h-px bg-accent-primary"></div>
+                    <h2 class="text-xs tracking-[0.2em] font-bold text-accent-primary uppercase">Milestones</h2>
+                </div>
+                <h3 class="text-2xl font-bold text-cream-900">專業歷程與實務產出</h3>
+            </div>
+
+            <!-- 時間軸容器 -->
+            <div class="relative border-l border-cream-300/80 ml-4 md:ml-6 space-y-12">
+                
+                <!-- 節點 1 (健行科大 AI 培訓) -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <!-- 時間標記小圈 -->
+                    <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-accent-primary border-4 border-cream-100 group-hover:scale-125 transition-transform"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                        <div class="md:col-span-3">
+                            <span class="inline-block px-2 py-0.5 bg-accent-primary/10 text-accent-primary text-[10px] font-bold tracking-wider rounded-md mb-1 uppercase">2026 培訓中</span>
+                            <h4 class="text-sm font-bold text-cream-900">健行科技大學</h4>
+                            <p class="text-xs text-cream-800">400小時數位AI應用培訓班</p>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-5 rounded-xl border border-cream-200/70 premium-shadow">
+                            <p class="text-xs font-semibold text-accent-primary mb-1">數位行政工具與提示詞工程實踐</p>
+                            <p class="text-xs text-cream-800 leading-relaxed">
+                                目前於培訓班精進數位行政整合。深入練習如何使用大語言模型輔助撰寫與排版專業商務信件、簡報大綱架構整理、Excel 數據表格快速篩選及函數處理。落實「人機協作」思維，厚植新世代行政專才所需的敏捷度。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 節點 2 (山隆通運) -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-accent-primary border-4 border-cream-100 group-hover:scale-125 transition-transform"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                        <div class="md:col-span-3">
+                            <span class="inline-block px-2 py-0.5 bg-accent-primary/10 text-accent-primary text-[10px] font-bold tracking-wider rounded-md mb-1 uppercase">2021/05 - 2026/01</span>
+                            <h4 class="text-sm font-bold text-cream-900">山隆通運股份有限公司</h4>
+                            <p class="text-xs text-cream-800">請款人員</p>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-5 rounded-xl border border-cream-200/70 premium-shadow">
+                            <p class="text-xs font-semibold text-accent-primary mb-1">子公司財務請款核對與流程優化 (維持 99% 以上對帳正確率)</p>
+                            <ul class="text-xs text-cream-800 space-y-1.5 list-disc pl-4 leading-relaxed">
+                                <li>熟練操作 <strong>Oracle 與泛宇系統</strong> 執行跨部門請款，每月精準對帳與發票沖銷處理 30-35 筆百萬級別交易。</li>
+                                <li>撰寫個人對帳 SOP 筆記流程，將常態對帳審核作業時間由 96 小時（3天）<strong>縮短至 48 小時（1.5天）</strong>。</li>
+                                <li>建立嚴謹單據覆核退件機制，每月主動攔截 4-5 次前線不實維修單據與錯誤，防止財務疏漏並倒逼源頭資料正確率提升至 95%。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 節點 3 (勝宏) -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-accent-primary border-4 border-cream-100 group-hover:scale-125 transition-transform"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                        <div class="md:col-span-3">
+                            <span class="inline-block px-2 py-0.5 bg-accent-primary/10 text-accent-primary text-[10px] font-bold tracking-wider rounded-md mb-1">2015/09 - 2021/04</span>
+                            <h4 class="text-sm font-bold text-cream-900">勝宏股份有限公司</h4>
+                            <p class="text-xs text-cream-800">行政人員 / 品檢員</p>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-5 rounded-xl border border-cream-200/70 premium-shadow">
+                            <p class="text-xs font-semibold text-accent-primary mb-1">不織布精密品檢作業與品質瑕疵判讀</p>
+                            <ul class="text-xs text-cream-800 space-y-1.5 list-disc pl-4 leading-relaxed">
+                                <li>監控精密自動品檢儀器，執行高穩定度針軋布與彈性不織布檢驗，單日最高核實 25-27 捲。</li>
+                                <li>即時處理厚薄度及汙損異常停機警報，獨立做出瑕疵裁剪及接頭處理，維持高品質標準並減少原料損耗。</li>
+                                <li>配合出貨包裝端執行標籤覆核，確保規格一致性，並於初期自發整理工作記錄協助現場生產日報表基礎錄入。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 聯絡方式 (Contact Section) -->
+    <section id="contact" class="py-24 px-6 max-w-5xl mx-auto space-y-12">
+        <div class="text-center md:text-left space-y-2">
+            <div class="flex items-center justify-center md:justify-start gap-3">
+                <div class="w-6 h-px bg-accent-primary"></div>
+                <h2 class="text-xs tracking-[0.2em] font-bold text-accent-primary uppercase">Contact</h2>
+            </div>
+            <h3 class="text-2xl font-bold text-cream-900">期待與您展開對話</h3>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- 聯絡資訊 -->
+            <div class="lg:col-span-5 space-y-6">
+                <p class="text-sm leading-relaxed text-cream-800 text-justify">
+                    如果您正在尋找一位具備財務對帳細緻度、高度專注力品檢基礎，且極具環境適應力與 AI 數位學習熱忱的優秀夥伴，歡迎隨時與我交流，共創未來！
+                </p>
+                
+                <div class="space-y-4 pt-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-cream-100 flex items-center justify-center text-accent-primary shrink-0">
+                            <i data-lucide="phone" class="w-4.5 h-4.5"></i>
+                        </div>
+                        <div>
+                            <p class="text-[9px] text-cream-800 uppercase tracking-widest font-semibold">行動電話</p>
+                            <a href="tel:0988656521" class="text-sm font-bold text-cream-900 hover:text-accent-primary transition-colors">0988-656-521</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-cream-100 flex items-center justify-center text-accent-primary shrink-0">
+                            <i data-lucide="mail" class="w-4.5 h-4.5"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-[9px] text-cream-800 uppercase tracking-widest font-semibold">電子郵件</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-bold text-cream-900 truncate">a0988656521@gmail.com</span>
+                                <button onclick="copyEmail()" class="text-xs text-accent-primary hover:text-accent-hover flex items-center gap-0.5" title="複製信箱">
+                                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-cream-100 flex items-center justify-center text-accent-primary shrink-0">
+                            <i data-lucide="map-pin" class="w-4.5 h-4.5"></i>
+                        </div>
+                        <div>
+                            <p class="text-[9px] text-cream-800 uppercase tracking-widest font-semibold">服務據點</p>
+                            <p class="text-sm font-bold text-cream-900">桃園市大園區</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 聯絡表單卡片 -->
+            <div class="lg:col-span-7 bg-white p-6 md:p-8 rounded-2xl border border-cream-200/60 premium-shadow">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="block text-[11px] font-semibold text-cream-800 mb-1.5 uppercase tracking-wider">您的姓名</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3 bg-cream-50 border border-cream-200 rounded-xl text-sm text-cream-900 focus:outline-none focus:border-accent-primary transition-all">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-[11px] font-semibold text-cream-800 mb-1.5 uppercase tracking-wider">電子郵件</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 bg-cream-50 border border-cream-200 rounded-xl text-sm text-cream-900 focus:outline-none focus:border-accent-primary transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-[11px] font-semibold text-cream-800 mb-1.5 uppercase tracking-wider">留言內容</label>
+                        <textarea id="message" rows="4" required class="w-full px-4 py-3 bg-cream-50 border border-cream-200 rounded-xl text-sm text-cream-900 focus:outline-none focus:border-accent-primary transition-all resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-cream-900 text-cream-50 text-xs font-bold tracking-widest rounded-xl hover:bg-accent-primary transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i> 送出訊息
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="py-12 bg-cream-100 text-center text-xs text-cream-800/80 border-t border-cream-200/40 space-y-2">
+        <p class="font-bold tracking-widest text-cream-900 text-[10px]">YA-HUA CHANG © 2026</p>
+        <p class="text-[10px] text-cream-800/60 font-light">精心設計自適應單頁個人數位履歷 • 精緻簡約款</p>
+    </footer>
+
+    <!-- 自訂客製化 Toast 通知元件 (不使用 alert) -->
+    <div id="toast" class="fixed bottom-6 right-6 px-5 py-3 bg-cream-900 text-white text-xs rounded-xl shadow-lg flex items-center gap-2.5 opacity-0 pointer-events-none transform translate-y-2 transition-all duration-300 z-50">
+        <i id="toastIcon" data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+        <span id="toastText">信箱已複製</span>
+    </div>
+
+    <!-- JS 功能邏輯 -->
+    <script>
+        // 初始化 Lucide 圖標
+        lucide.createIcons();
+
+        // 複製信箱邏輯
+        function copyEmail() {
+            const emailText = "a0988656521@gmail.com";
+            
+            // 建立臨時 input 複製
+            const tempInput = document.createElement("input");
+            tempInput.value = emailText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy"); // 採用安全的傳統剪貼簿方式
+            document.body.removeChild(tempInput);
+
+            showToast("check-circle", "text-emerald-400", "電子郵件已複製到您的剪貼簿！");
+        }
+
+        // 送出表單模擬
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+
+            // 成功送出模擬
+            showToast("send", "text-amber-400", `謝謝您 ${name}，訊息已成功發送（模擬功能）！`);
+            
+            // 重設表單
+            document.getElementById("contactForm").reset();
+        }
+
+        // 自訂精美 Toast 提示
+        function showToast(iconName, iconColorClass, message) {
+            const toast = document.getElementById("toast");
+            const toastText = document.getElementById("toastText");
+            const toastIcon = document.getElementById("toastIcon");
+
+            // 設定內容
+            toastText.textContent = message;
+            toastIcon.setAttribute("data-lucide", iconName);
+            toastIcon.className = `w-4 h-4 ${iconColorClass}`;
+            lucide.createIcons(); // 重新渲染 icon
+
+            // 顯示動畫
+            toast.classList.remove("opacity-0", "pointer-events-none", "translate-y-2");
+            toast.classList.add("opacity-100", "translate-y-0");
+
+            // 3秒後消失
+            setTimeout(() => {
+                toast.classList.remove("opacity-100", "translate-y-0");
+                toast.classList.add("opacity-0", "pointer-events-none", "translate-y-2");
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
