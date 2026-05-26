@@ -102,8 +102,11 @@
                     <!-- 大頭照外框 -->
                     <div class="absolute inset-0 bg-white p-3 rounded-2xl border border-cream-200/80 premium-shadow flex items-center justify-center overflow-hidden">
                         
-                        <!-- 預設直接加載新資料夾路徑中的 avatar001.png -->
-                        <img id="avatarImage" src="./imges/avatar001.png" alt="張雅華" class="w-full h-full object-contain rounded-xl p-2 bg-white hidden transition-opacity duration-300 opacity-0">
+                        <!-- 預設直接加載 imges/avatar001.png。若失敗自動嘗試根目錄，再失敗則轉為文字 Fallback -->
+                        <img id="avatarImage" src="imges/avatar001.png" alt="張雅華" 
+                             class="w-full h-full object-contain rounded-xl p-2 bg-white transition-opacity duration-300 opacity-0"
+                             onload="this.classList.remove('opacity-0'); document.getElementById('avatarFallback').classList.add('hidden');"
+                             onerror="this.onerror=null; this.src='avatar001.png'; this.onerror=()=>showFallbackImage();">
                              
                         <!-- fallback 精美文字頭像（在圖片完全加載完成前，預設顯示） -->
                         <div id="avatarFallback" class="absolute inset-0 flex flex-col items-center justify-center bg-cream-100 rounded-xl">
@@ -450,55 +453,6 @@
                 fallback.classList.remove("hidden");
             }
         }
-
-        // 專屬大頭照智慧探測載入器
-        window.addEventListener('DOMContentLoaded', () => {
-            const img = document.getElementById('avatarImage');
-            const fallback = document.getElementById('avatarFallback');
-            
-            // 探測可能的檔名 (優先順序已將新資料夾 imges/avatar001.png 提到最前方)
-            const sources = [
-                'imges/avatar001.png',
-                'imges/avatar001.PNG',
-                './imges/avatar001.png',
-                './imges/avatar001.PNG',
-                'avatar001.png',
-                'avatar001.PNG',
-                './avatar001.png'
-            ];
-            
-            let index = 0;
-            
-            function tryLoadSource() {
-                if (index < sources.length) {
-                    const tempImg = new Image();
-                    tempImg.src = './' + sources[index];
-                    
-                    tempImg.onload = () => {
-                        // 載入成功，套用正確的路徑
-                        img.src = './' + sources[index];
-                        img.classList.remove('hidden');
-                        // 加入稍微延遲確保平滑過渡
-                        setTimeout(() => {
-                            img.classList.remove('opacity-0');
-                            img.classList.add('opacity-100');
-                        }, 50);
-                        fallback.classList.add('hidden');
-                    };
-                    
-                    tempImg.onerror = () => {
-                        // 載入失敗，嘗試下一個可能路徑
-                        index++;
-                        tryLoadSource();
-                    };
-                } else {
-                    // 若所有探測接宣告失敗，則呼叫備用日系名牌卡
-                    showFallbackImage();
-                }
-            }
-            
-            tryLoadSource();
-        });
 
         // 自訂精美 Toast 提示
         function showToast(iconName, iconColorClass, message) {
